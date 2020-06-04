@@ -3,24 +3,34 @@ import sys
 import os
 from workflow import Workflow3
 from jira import Jira
-from search_board import search_board
-from search_filter import search_filter
-from search_issue import search_issue
-from search_project import search_project
+from search_board import search_board_spec
+from search_filter import search_filter_spec
+from search_issue import search_issue_spec
+from search_project import search_project_spec
 
-searchers = {
-    'board': search_board,
-    'filter': search_filter,
-    'issue': search_issue,
-    'project': search_project
+search_specs = {
+    'board': search_board_spec,
+    'filter': search_filter_spec,
+    'issue': search_issue_spec,
+    'project': search_project_spec
 }
 
-def main(wf):
-    search = wf.args[0]
-    query = wf.args[1]
+def search(wf, spec, query):
     jira = Jira()
-    searcher = searchers[search]
-    searcher(wf, jira, query)
+    response = spec['get_results'](jira, query)
+    json = response.json()
+    if 'total' in json and json['total'] > 0:
+        results = spec['extract_results'](json)
+        for result in results:
+            spec['add_item'](wf, jira, result)
+    else:
+        wf.add_item(title='No results', subtitle='Try something else...', valid=0)
+
+def main(wf):
+    search_key = wf.args[0]
+    query = wf.args[1]
+    search_spec = search_specs[search_key]
+    search(wf, search_spec, query)
     wf.send_feedback()
 
 if __name__ == '__main__':
