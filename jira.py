@@ -18,8 +18,7 @@ def full_params(params):
     return p
 
 class Jira:
-    def __init__(self, wf):
-        self.wf = wf
+    def __init__(self):
         self.base_url = 'https://' + domain
         self.headers = {
             'Accept': 'application/json',

@@ -18,7 +18,7 @@ searchers = {
 def main(wf):
     search = wf.args[0]
     query = wf.args[1]
-    jira = Jira(wf)
+    jira = Jira()
     searcher = searchers[search]
     searcher(wf, jira, query)
     wf.send_feedback()
