@@ -9,8 +9,8 @@ def add_item(wf, jira, issue):
     issue_key=issue['key']
     issue_url=jira.issue_url(issue_key)
     wf.add_item(
-        title=issue['key'],
-        subtitle=issue['fields']['summary'],
+        title=issue['fields']['summary'],
+        subtitle=issue['key'] + ' - ' + issue['fields']['issuetype']['name'],
         autocomplete=issue_key,
         arg=issue_url,
         valid=1
