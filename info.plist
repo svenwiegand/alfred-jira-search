@@ -296,7 +296,9 @@
 		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string>Search Jira issues, boards, filters and projects using search suggestions.
+
+See details for setup and usage at https://github.com/svenwiegand/alfred-jira-search</string>
 	<key>uidata</key>
 	<dict>
 		<key>23F40200-C3F1-458A-A3BE-D6074296479D</key>
@@ -351,7 +353,7 @@
 		<string>domain</string>
 	</array>
 	<key>version</key>
-	<string></string>
+	<string>1.0.0</string>
 	<key>webaddress</key>
 	<string></string>
 </dict>
