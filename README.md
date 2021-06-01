@@ -14,7 +14,7 @@ This [Alfred](https://www.alfredapp.com/) workflow allows you to search for Jira
 4. Click "Create and manage API tokens"
 5. Create a new API token, give it a useful label like "Jira search" and note down the token shown to you
 
-Now download the `.alfredworkflow` file an double click it, to import the workflow into Alfread.
+[Download the workflow file](http://www.packal.org/workflow/jira-search) an double click it, to import the workflow into Alfread.
 
 Set the three required variables (see below):
 
