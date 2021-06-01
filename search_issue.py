@@ -3,7 +3,7 @@ def get_results(jira, query):
         jql = 'key="' + query + '" or text~"' + query + '*"'
     else:
         jql = 'text~"' + query + '*"'
-    return jira.get('/rest/api/3/search', {'jql': jql + ' order by lastViewed desc'})
+    return jira.get('/rest/api/3/search', {'jql': jql + ' order by lastViewed desc', 'fields': 'summary,issuetype'})
 
 def add_item(wf, jira, issue):
     issue_key=issue['key']
