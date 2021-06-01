@@ -5,6 +5,8 @@ This [Alfred](https://www.alfredapp.com/) workflow allows you to search for Jira
 
 <img src="https://raw.githubusercontent.com/svenwiegand/alfred-jira-search/master/res/screenshot.png" alt="Screenshot" width="480"/>
 
+**Attention:** This is my first Alfread workflow and my first and only Python code – so please be forgiving…
+
 ## Install & Setup
 **Note:** I haven't implemented OAuth authentication yet, so you will need an API token to use this workflow. Follow these steps to create an API token:
 
