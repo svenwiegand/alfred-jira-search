@@ -3,7 +3,7 @@ This [Alfred](https://www.alfredapp.com/) workflow allows you to search for Jira
 
 [Alfred](https://www.alfredapp.com/) (alfredapp) is a productivity tool for macOS that provides a more sophisticated and extandable alternative to macOS' integrated spotlight search.
 
-![Screenshot](https://github.com/svenwiegand/alfred-jira-search/blob/master/screenshot.png?raw=true)
+<img src="https://raw.githubusercontent.com/svenwiegand/alfred-jira-search/master/res/screenshot.png" alt="Screenshot" width="480"/>
 
 ## Install & Setup
 **Note:** I haven't implemented OAuth authentication yet, so you will need an API token to use this workflow. Follow these steps to create an API token:
