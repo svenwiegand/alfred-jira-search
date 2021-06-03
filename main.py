@@ -5,14 +5,15 @@ from workflow import Workflow3
 from jira import Jira
 from search_board import search_board_spec
 from search_filter import search_filter_spec
-from search_issue import search_issue_spec
+from search_issue import search_issue_spec, search_jql_spec
 from search_project import search_project_spec
 
 search_specs = {
     'board': search_board_spec,
     'filter': search_filter_spec,
     'issue': search_issue_spec,
-    'project': search_project_spec
+    'jql': search_jql_spec,
+    'project': search_project_spec,
 }
 
 def search(wf, spec, query):

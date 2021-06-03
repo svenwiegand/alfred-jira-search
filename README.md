@@ -27,12 +27,13 @@ Set the three required variables (see below):
 Now your done.
 
 ## Using jira search
-Bring up the Alfread search bar and type `jira` to activate this plugin. You then have to type one of these keywords or choose them from the suggestion list to specify what you want to search for:
+Bring up the Alfread search bar and type `jira` to activate this plugin. You can then choose between these search modes:
 
-- `issue`: Searches for issues with additional filters (see below)
-- `board`: Searches for boards matching your query
-- `filter`: Searches for filters matching your query
-- `project`: Searches for projects matching your query
+- `board`: Search for boards by name
+- `filter`: Search for saved Jira filters by name
+- `issue`: Search for issues by key or text content filter by additional properties (see below)
+- `jql`: Search for issues using JQL
+- `project`: Search for projects by name
 
 ### `issue` Search
 If you type in an issue key (for example `PRJ-1234`) the workflow will suggest the matching issue, so that you can jump directly to it.
