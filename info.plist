@@ -267,12 +267,12 @@ See details for setup and usage at https://github.com/svenwiegand/alfred-jira-se
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
-		<string>password</string>
-		<string>username</string>
 		<string>domain</string>
+		<string>username</string>
+		<string>password</string>
 	</array>
 	<key>version</key>
-	<string>1.0.0</string>
+	<string>2.0.0</string>
 	<key>webaddress</key>
 	<string></string>
 </dict>
