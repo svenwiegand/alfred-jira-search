@@ -1,11 +1,9 @@
 import re
-import logging #todo
 
 def extract_filter(query, key_character):
     pattern = '(?: |^)' + key_character + '(\w+|\"[\w ]+\")'
     match = re.search(pattern, query)
     filter = match and match.group(1)
-    logging.debug(filter)
     if filter:
         sanitizedQuery = query.replace(key_character + filter, "")
         return sanitizedQuery, filter
