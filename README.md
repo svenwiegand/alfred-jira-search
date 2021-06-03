@@ -29,7 +29,26 @@ Now your done.
 ## Using jira search
 Bring up the Alfread search bar and type `jira` to activate this plugin. You then have to type one of these keywords or choose them from the suggestion list to specify what you want to search for:
 
-- `issue`: Searches `key` and `text` of the issues for your query
+- `issue`: Searches for issues with additional filters (see below)
 - `board`: Searches for boards matching your query
 - `filter`: Searches for filters matching your query
 - `project`: Searches for projects matching your query
+
+### `issue` Search
+If you type in an issue key (for example `PRJ-1234`) the workflow will suggest the matching issue, so that you can jump directly to it.
+
+If you type in anything else the workflow will search for issues containing the text in one of their text fields. 
+In this mode you can narrow down the result list using the following filter syntax:
+
+- `@prj`: Will only list matching issues of the Jira project with the name or project key `prj`
+- `#bug`: Will only list matching issues of the issue type `bug`
+
+In both cases you can use question marks to specify names with spaces like `#"my complex issue type"`.
+
+You can combine all of this. For example
+
+```
+receiving mail @mail #"external bug"
+```
+
+Will search for all issues of type `external bug` containing the words `receiving` and `mail` in the Jira project `mail`.

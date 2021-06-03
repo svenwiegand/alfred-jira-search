@@ -18,13 +18,15 @@ search_specs = {
 def search(wf, spec, query):
     jira = Jira()
     response = spec['get_results'](jira, query)
-    json = response.json()
-    if 'total' in json and json['total'] > 0:
+    json = response.json() if response.status_code == 200 else None
+    if json and 'total' in json and json['total'] > 0:
         results = spec['extract_results'](json)
         for result in results:
             spec['add_item'](wf, jira, result)
-    else:
+    elif response.status_code < 400:
         wf.add_item(title='No results', subtitle='Try something else...', valid=0)
+    else:
+        wf.add_item(title='An error occured', subtitle="Maybe your query isn't valid...", valid=0)
 
 def main(wf):
     search_key = wf.args[0]

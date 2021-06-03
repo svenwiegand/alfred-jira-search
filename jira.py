@@ -1,4 +1,5 @@
 import base64
+import logging
 import os
 import re
 from workflow import Workflow3, web
@@ -29,6 +30,7 @@ class Jira:
         return self.base_url + path
 
     def get(self, path, params = None):
+        logging.info('get ' + path + ' ' + str(params))
         r = web.get(
             self.url(path), 
             params=full_params(params),
