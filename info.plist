@@ -81,7 +81,7 @@
 				<key>fixedorder</key>
 				<false/>
 				<key>items</key>
-				<string>[{"title":"board","arg":"board|Search board by name","subtitle":"Search board by name"},{"title":"filter","arg":"filter|Search saved filter by name","subtitle":"Search saved filter by name"},{"title":"issue","arg":"issue|Search issue by key or content – filter by '@project' and '#issuetype'","subtitle":"Search issue by key or content – filter by '@project' and '#issuetype'"},{"title":"jql","arg":"jql|Search issue using JQL","subtitle":"Search issue using JQL"},{"title":"project","arg":"project|Search project by name","subtitle":"Search project by name"}]</string>
+				<string>[{"title":"board","arg":"board|Search board by name","subtitle":"Type ⏎ to search board by name"},{"title":"filter","arg":"filter|Search saved filter by name","subtitle":"Type ⏎ to search saved filter by name"},{"title":"issue","arg":"issue|Search issue by key or content – filter by '@project' and '#issuetype'","subtitle":"Type ⏎ to search issue by key or content – filter by '@project' and '#issuetype'"},{"title":"jql","arg":"jql|Search issue using JQL","subtitle":"Type ⏎ to search issue using JQL"},{"title":"project","arg":"project|Search project by name","subtitle":"Type ⏎ to search project by name"}]</string>
 				<key>keyword</key>
 				<string>jira</string>
 				<key>runningsubtext</key>

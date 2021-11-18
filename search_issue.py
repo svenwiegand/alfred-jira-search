@@ -10,9 +10,20 @@ def extract_filter(query, key_character):
     else:
         return query, None
 
+def query_terms(query):
+    sanitized = query.replace("-", " ")
+    return sanitized.split(" ")
+
+def terms_jql(terms):
+    def term_jql(term):
+        return 'text~"' + term + '*"'
+    nonEmptyTerms = filter(lambda term: len(term.strip()) > 0, terms)
+    termSearches = map(term_jql, nonEmptyTerms)
+    return " AND ".join(termSearches)
+
 def add_jql_filter(jql, filter_key, filter_value):
     if filter_value:
-        return jql + ' and ' + filter_key + '=' + filter_value
+        return jql + ' AND ' + filter_key + '=' + filter_value
     else:
         return jql
 
@@ -22,8 +33,7 @@ def get_issue_search_results(jira, query):
     else:
         query, project = extract_filter(query, "@")
         query, issue_type = extract_filter(query, "#")
-        textQuery = (query + '*') if not query[-1].isspace() else query.strip()
-        jql = 'text~"' + textQuery + '"'
+        jql = terms_jql(query_terms(query))
         jql = add_jql_filter(jql, "project", project)
         jql = add_jql_filter(jql, "issuetype", issue_type)
     return get_jql_results(jira, jql)
