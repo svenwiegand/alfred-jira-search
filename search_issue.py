@@ -11,8 +11,8 @@ def extract_filter(query, key_character):
         return query, None
 
 def query_terms(query):
-    sanitized = query.replace("-", " ")
-    return sanitized.split(" ")
+    sanitized = re.sub('[-+!"]', ' ', query)
+    return sanitized.split(' ')
 
 def terms_jql(terms):
     def term_jql(term):
