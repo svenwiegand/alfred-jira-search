@@ -36,6 +36,7 @@ class Jira:
             params=full_params(params),
             headers=self.headers
         )
+        logging.info('status code: ' + str(r.status_code))
         return r
 
     def issue_url(self, key):
