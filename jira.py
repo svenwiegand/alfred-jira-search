@@ -6,6 +6,9 @@ from workflow import Workflow3, web
 
 issue_key_pattern = r'[a-zA-Z]+-[0-9]+'
 domain = os.environ['domain']
+# strip http or https from domain
+domain = domain.replace('https://','')
+domain = domain.replace('http://','')
 username = os.environ['username']
 password = os.environ['password']
 default_params = {
