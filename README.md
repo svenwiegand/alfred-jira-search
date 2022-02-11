@@ -1,4 +1,7 @@
-# Jira Search for Alfred
+# Jira Search for Alfred [deprecated]
+
+> :warning: **Note:** As I've switched from Alfred to [Raycast](https://raycast.com), I'm no longer supporting this workflow here. For Raycast you can install my [jira-search extension](https://github.com/svenwiegand/raycast-jira-search) directly from Raycast's extension list.
+
 This [Alfred](https://www.alfredapp.com/) workflow allows you to search for Jira issues, boards, filters and projects from Alfred's search bar using search suggestions.
 
 [Alfred](https://www.alfredapp.com/) (alfredapp) is a productivity tool for macOS that provides a more sophisticated and extandable alternative to macOS' integrated spotlight search.
